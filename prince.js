@@ -33,6 +33,8 @@ app.post("/generate/:key", function (req, res) {
             res.contentType('.pdf');
             res.write(data);
             res.end();
+            fs.unlink(filename+".pdf");
+            fs.unlink(filename+".html");
           });
         })
       });   
